@@ -69,7 +69,7 @@ class DBM():
         # Ending query
         query += ")"
 
-        print(query)
+        # print(query)
         with self.conn:  # With a context manager we don't need a commit
             self.cur.execute(query)
 
@@ -95,13 +95,13 @@ class DBM():
                 self.cur.execute(q, dp)        
 
     def query(self, q, data = None):
-        with self.conn:
-            return self.cur.execute(q, data)
-        # if data:
-        #     with self.conn:
-        #         return self.cur.execute(q, data)
         # with self.conn:
-        #     self.cur.execute(q)
+        #     return self.cur.execute(q, data)
+        if data:
+            with self.conn:
+                return self.cur.execute(q, data)
+        with self.conn:
+            return self.cur.execute(q)
     def close(self):
         self.conn.close()
 
