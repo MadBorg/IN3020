@@ -48,6 +48,7 @@ class DBM():
 
         # References
         if references:
+            print(f"references: query: \n{query}")
             query += ",\n"
             for reference in references:
                 # table, key, forign_key
@@ -64,7 +65,7 @@ class DBM():
                     on_upt = reference["on_update"]
                     assert type(on_upt) is str, "on update is not str"
                     query += f"     ON UPDATE {on_upt}"
-        
+                print(f"references done: query: \n{query}")
         
         # Ending query
         query += ")"

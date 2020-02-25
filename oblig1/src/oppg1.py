@@ -26,7 +26,7 @@ sm_attributes = (
 )
 sm_references = (
      # table, key, forign_key, on delete, on update
-     {"table": "OnStagePersonn", "key": "ospID","forign_key": "ospID"},
+     {"table": osp_name, "key": "ospID","forign_key": "ospID"},
 )
 
 sm_primary_key = ( # TODO : test
@@ -90,19 +90,19 @@ for i in range(osp_N):
      tmp_sm = sms[sm_for_osp[i]]
      sm_data.append({
           "ospID": start_id_osp + i,
-          "smID": tmp_sm["smID"],
+          "smID": tmp_sm['smID'],
           "name": tmp_sm["name"],
           "lastname": tmp_sm["lastname"],
           "function": tmp_sm["function"]
      })
-     print(f"tmp_sm smID: {tmp_sm['smID']} ")
+     print(f'tmp_sm smID: {tmp_sm["smID"]} ')
 
 
 
 
 if __name__ == "__main__":
      # path = ":memory:"
-     path  = "C:\\Projects\\IN3020\\oblig1\\db\\oblig.db"
+     path  = "oblig1\\db\\oblig.db"
      db_obj = db.DBM(path)
      db_obj.create_table(
           name=osp_name, attributes=osp_attributes
@@ -152,5 +152,5 @@ if __name__ == "__main__":
      print(res)
 
 
-     # print(db.DBM.tables)
+     print(db.DBM.tables)
      db_obj.close()
