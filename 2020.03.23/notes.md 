@@ -1,0 +1,25 @@
+# lecture
+
+## Exe plans
+
+* exe plan - shcedule S for a set of transactions {T_1, ..., T_n} is a mergin of the operations in T_1, ..., T_n
+* Features/characteristics of S:
+  * Each element in S is an operatrion in exactly one of the transactions
+* not all serial plans give the same answer
+* T_i is a transaction
+* Ensure that concurrency dont create problems
+
+## Conflic serialisations
+
+* Transaction: ...
+* Transaction exe plan: A merge of T_1, ..., T_n
+* Serial exe plan: Wich transaction, wich operation
+* Conflic in an exe plan:
+  1. Read write conflic: ...
+  2. Wirite wirte conflict: if T_i is writing and some other T is writing to the same
+  3. Intra transacton conflict: ...
+
+## Conflict serializability
+
+* S_1 is serial S_2 not serialiseble, but S_2 can be transformed to S_1 by changing the order of operations, then it is conflict serializeble
+
